@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'github-users', component: CoursesComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
 ];
 
 @NgModule({
