@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-customers',
@@ -7,12 +7,23 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./customers.component.css'],
 })
 export class CustomersComponent implements OnInit {
-  name = new FormControl('');
-  constructor() {}
+  searchForm = new FormGroup({
+    username: new FormControl(''),
+    repo: new FormControl(''),
+  });
 
+  constructor() {}
   ngOnInit(): void {}
 
-  updateName() {
-    this.name.setValue('Nancy');
+  onSubmit() {
+    console.log('this.searchForm.value', this.searchForm.value);
   }
+  // name = new FormControl('');
+  // constructor() {}
+
+  // ngOnInit(): void {}
+
+  // updateName() {
+  //   this.name.setValue('Nancy');
+  // }
 }
