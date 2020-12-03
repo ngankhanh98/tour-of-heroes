@@ -1,5 +1,6 @@
-<ul *ngFor="let user of users">
-    <li>
-        {{user.id}}
-    </li>
-</ul>
+<label>Name:
+    <input type="text" [formControl]='name' />
+</label>
+
+<button (click)="updateName()">Update Name</button>
+

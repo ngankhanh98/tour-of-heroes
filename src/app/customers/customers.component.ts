@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from '../courses.service';
-import { User } from '../user';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-customers',
@@ -8,17 +7,12 @@ import { User } from '../user';
   styleUrls: ['./customers.component.css'],
 })
 export class CustomersComponent implements OnInit {
-  users: User[] = [];
-  constructor(private courseService: CoursesService) {}
+  name = new FormControl('');
+  constructor() {}
 
-  ngOnInit(): void {
-    this.getGithubUsers();
-  }
+  ngOnInit(): void {}
 
-  getGithubUsers() {
-    this.courseService.getGithubUserLazyLoading().subscribe((response) => {
-      this.users = response.items;
-      console.log('this.users', this.users);
-    });
+  updateName() {
+    this.name.setValue('Nancy');
   }
 }

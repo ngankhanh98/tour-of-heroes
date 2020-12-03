@@ -5,7 +5,7 @@ I. Conception
 - [ ] DI
 II. Router
 - [xx] Basic Router
-- [ ] Lazy load
+- [xx] Lazy load
 III. Form
 - [ ] Form
 IV. HTTP Client
